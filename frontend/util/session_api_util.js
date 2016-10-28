@@ -8,11 +8,12 @@ export const login = (user, success, error) => {
   });
 };
 
-export const logout = (success) => {
+export const logout = (success, error) => {
   $.ajax({
     method: 'delete',
     url: 'api/session',
-    success
+    success,
+    error
   });
 };
 
