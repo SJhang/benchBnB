@@ -18,9 +18,5 @@ class ApplicationController < ActionController::Base
     return true if current_user
   end
 
-  def require_log_in!
-    redirect_to new_session_url unless logged_in?
-  end
-
   helper_method :logged_in?, :current_user
 end

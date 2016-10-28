@@ -5,12 +5,17 @@ class Api::SessionsController < ApplicationController
       login(@user)
       render :show
     else
-      render json: "Invalid username/password", status: 402
+      render json: ["Invalid credentials"], status: 401
     end
   end
 
   def destroy
+    if current_user.nil?
+      render json: ["user not found"], status: 404
+      return
+    end
     logout
+    render json: {}
   end
 
   def user_params

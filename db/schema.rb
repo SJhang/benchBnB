@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20161028212939) do
     t.string   "session_token",   null: false
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end
 
 end
