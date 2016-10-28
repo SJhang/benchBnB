@@ -1,9 +1,27 @@
-const SIGN_UP
-const LOG_IN
-const LOG_OUT
+export const login = (user, success, error) => {
+  $.ajax({
+    method: 'post',
+    url: 'api/session',
+    data: user,
+    success,
+    error
+  });
+};
 
-$.ajax({
-  method: 'post',
-  url: 'api/user',
-  success
-})
+export const logout = (success) => {
+  $.ajax({
+    method: 'delete',
+    url: 'api/session',
+    success
+  });
+};
+
+export const signup = (user, success, error) => {
+  $.ajax({
+    method: 'post',
+    url: 'api/session',
+    data: user,
+    success,
+    error
+  });
+};
